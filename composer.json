@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
+        "driftingly/rector-laravel": "^2.1",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.24",
@@ -54,6 +55,8 @@
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
+        "rector": "vendor/bin/rector process --dry-run",
+        "rector:fix": "vendor/bin/rector process",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
