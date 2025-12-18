@@ -16,6 +16,9 @@ use Illuminate\Http\Response;
 
 class AuthController extends Controller
 {
+    /**
+     * Registrar un nuevo usuario.
+     */
     public function register(RegisterRequest $request, RegisterUserAction $action): JsonResponse
     {
        
@@ -40,6 +43,9 @@ class AuthController extends Controller
         ], 201);
     }
 
+    /**
+     * Inicio de sesión de usuario.
+     */
     public function login(LoginRequest $request, LoginUserAction $action): JsonResponse
     {
         $data = new LoginUserData(
@@ -54,6 +60,9 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Cerrar sesión del usuario autenticado.
+     */
     public function logout(Request $request, LogoutUserAction $action): Response
     {
        
